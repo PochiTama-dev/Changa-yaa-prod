@@ -1,0 +1,38 @@
+{
+  "name": "changa-yaa-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PochiTama-dev/changa-yaa-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PochiTama-dev/changa-yaa-back/issues"
+  },
+  "homepage": "https://github.com/PochiTama-dev/changa-yaa-back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.10.3",
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.4",
+    "path": "^0.12.7",
+    "resend": "^4.0.0",
+    "sequelize": "^6.37.3",
+    "socket.io": "^4.7.5",
+    "tesseract.js": "^6.0.0"
+  }
+}

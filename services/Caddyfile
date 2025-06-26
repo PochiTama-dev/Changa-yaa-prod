@@ -1,0 +1,22 @@
+:80 {
+    root * /usr/share/caddy
+
+    log {
+        output stdout
+    }
+
+    encode gzip
+
+    route {
+        handle_path /api/* {
+            reverse_proxy backend:3000
+        }
+
+        handle_path /socket.io/* {
+            reverse_proxy backend:3000
+        }
+
+        try_files {path} /index.html
+        file_server
+    }
+}

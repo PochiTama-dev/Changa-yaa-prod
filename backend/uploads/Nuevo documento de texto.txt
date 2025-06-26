@@ -1,0 +1,29 @@
+const handlePost = async (e: any) => {
+    e.preventDefault();
+    const post = { id_user: authUser.id, id_profession: job, description: description };
+  
+    if (uploadedFiles.length) {
+      const idPost = await createPost(post);
+      if (idPost.id) {
+        const form = new FormData();
+        form.append('id_post', idPost.id);
+  
+        for (const file of uploadedFiles) {
+          const compress = await imageCompression(file, compressionOptions);
+          const newFile = new File([compress], file.name, { type: compress.type });
+          form.append('images', newFile);
+        }
+  
+        const key = await createPostImage(form);
+        if (key) {
+          history.push('/profile');
+        } else {
+          setMsg('Las imagenes no se guardaron, intentalo otra vez...');
+        }
+      } else {
+        setMsg('Error al crear el posteo, intentalo otra vez...');
+      }
+    } else {
+      setMsg('Necesitamos imagenes para crear el posteo, intentalo otra vez...');
+    }
+  };  
